@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Reveal the Animal UI</title>
+</head>
+<body>
+    <div class="welcome">Welcome to the Interactive Reveal What’s that Animal UI</div>
+    <div class="instructions">Click on the buttons below to reveal the animal images</div>
+    
+    <div class="animal-row">
+        <div class="animal-container">
+            <img id="catImg" src="tabby-cat.jpg" alt="A Tabby Cat" style="display: none;" />
+            <div class="hide-button" style="display: none;" id="catHideDiv">
+                <button onclick="hideAnimal('cat')">Hide result</button>
+            </div>
+        </div>
+        
+        <div class="animal-container">
+            <img id="dogImg" src="dog.jpg" alt="A Dog" style="display: none;" />
+            <div class="hide-button" style="display: none;" id="dogHideDiv">
+                <button onclick="hideAnimal('dog')">Hide result</button>
+            </div>
+        </div>
+        
+        <div class="animal-container">
+            <img id="cowImg" src="cow.jpg" alt="A Cow" style="display: none;" />
+            <div class="hide-button" style="display: none;" id="cowHideDiv">
+                <button onclick="hideAnimal('cow')">Hide result</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-row">
+        <button onclick="revealAnimal('cat')">Reveal a CAT</button>
+        <button onclick="revealAnimal('dog')">Reveal a DOG</button>
+        <button onclick="revealAnimal('cow')">Reveal a COW</button>
+    </div>
+    
+    <script>
+        function revealAnimal(animal) {
+            const animalImg = document.getElementById(animal + 'Img');
+            const hideDiv = document.getElementById(animal + 'HideDiv');
+            animalImg.style.display = 'block';
+            hideDiv.style.display = 'block';
+        }
+        
+        function hideAnimal(animal) {
+            const animalImg = document.getElementById(animal + 'Img');
+            const hideDiv = document.getElementById(animal + 'HideDiv');
+            animalImg.style.display = 'none';
+            hideDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
